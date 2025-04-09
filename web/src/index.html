@@ -10,7 +10,41 @@
 <body>
   <div class="container">
     <h1>Dolgozók</h1>
-    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary my-4" 
+          data-bs-toggle="modal" data-bs-target="#empModal">Hozzáadás</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="empModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Hozzáadás</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+            <div class="empform">
+              <div class="input">
+                <label for="id">Id</label>
+                <input type="text" id="id" class="form-control" readonly>
+                <label for="name">Név</label>
+                <input type="text" id="name" class="form-control">
+                <label for="city">Település</label>
+                <input type="text" id="city" class="form-control">
+                <label for="salary">Fizetés</label>
+                <input type="text" id="salary" class="form-control">
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="saveButton">Mentés</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <table class="table table-striped">
       <thead>
         <tr>
