@@ -31,8 +31,16 @@ function renderTbody(empList) {
       <td>${emp.name}</td>      
       <td>${emp.city}</td>      
       <td>${emp.salary}</td>
-      <td><button class="btn btn-danger">Törlés</button></td>
-      <td><button class="btn btn-warning">Szerkesztés</button></td>
+      <td>
+        <button class="btn btn-danger" onclick="deleteEmployee(${emp.id})">
+        Törlés
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-warning" onclick="updateEmployee(${emp})">
+        Szerkesztés
+        </button>
+      </td>
     </tr>
     `;    
     tbodyContent += row;
@@ -75,4 +83,17 @@ function addEmployee(empData){
     getEmployees()
   })
   .catch(err =>console.log(err))
+}
+
+function deleteEmployee(id){
+  const delURL = url+"/"+id;
+  fetch(delURL,{
+    method:"DELETE"})
+  .then(response => response.json()
+  .then(result=>
+    console.log(result)),
+    getEmployees())
+}
+function updateEmployee(emp){
+  console.log("emp: ",emp)
 }
